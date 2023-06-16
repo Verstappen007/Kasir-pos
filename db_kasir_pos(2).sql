@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 15, 2023 at 02:42 PM
+-- Generation Time: Jun 16, 2023 at 04:46 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -279,7 +279,8 @@ CREATE TABLE `roles` (
 
 INSERT INTO `roles` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
 (1, 'admin', 'web', '2023-06-15 10:57:41', '2023-06-15 10:57:41'),
-(2, 'cashier', 'web', '2023-06-15 10:57:41', '2023-06-15 10:57:41');
+(2, 'cashier', 'web', '2023-06-15 10:57:41', '2023-06-15 10:57:41'),
+(3, 'Gudang', 'web', '2023-06-16 02:02:18', '2023-06-16 02:02:18');
 
 -- --------------------------------------------------------
 
@@ -298,11 +299,14 @@ CREATE TABLE `role_has_permissions` (
 
 INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 (1, 1),
+(1, 2),
 (2, 1),
 (3, 1),
 (4, 1),
 (5, 1),
 (6, 1),
+(6, 2),
+(6, 3),
 (7, 1),
 (8, 1),
 (9, 1),
@@ -313,18 +317,33 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 (14, 1),
 (15, 1),
 (16, 1),
+(16, 2),
+(16, 3),
 (17, 1),
+(17, 3),
 (18, 1),
+(18, 3),
 (19, 1),
+(19, 3),
 (20, 1),
+(20, 2),
+(20, 3),
 (21, 1),
+(21, 3),
 (22, 1),
+(22, 3),
 (23, 1),
+(23, 3),
 (24, 1),
+(24, 2),
 (25, 1),
+(25, 2),
 (26, 1),
+(26, 2),
 (27, 1),
+(27, 2),
 (28, 1),
+(28, 2),
 (29, 1),
 (30, 1);
 
@@ -387,7 +406,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Administrator', 'admin@gmail.com', NULL, '$2y$10$LuBmppVOsoemJXvH2QpjRuQ.KQyVqeuo3xOKgDH5KREyJIo7mWZIi', NULL, NULL, 'dMuxVgtfLXhmhUbitN1v8uJGkPoHJblhHl8yqdR4iHDwcX1mCn4iBJpANt5G', '2023-06-15 10:57:42', '2023-06-15 11:51:46');
+(1, 'Administrator', 'admin@gmail.com', NULL, '$2y$10$LuBmppVOsoemJXvH2QpjRuQ.KQyVqeuo3xOKgDH5KREyJIo7mWZIi', NULL, NULL, 'UnDvqnIsuLoQFS8s9ZqlLZKyEee7jRjoTC3Y8n7nALNZpgiwV7uMR9ezH6ND', '2023-06-15 10:57:42', '2023-06-15 11:51:46');
 
 --
 -- Indexes for dumped tables
@@ -575,7 +594,7 @@ ALTER TABLE `profits`
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `transactions`
